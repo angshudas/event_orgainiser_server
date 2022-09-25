@@ -4,12 +4,13 @@ require('dotenv').config();
 const User = require('./model/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const cors = require('cors');
 
 
 const app = express();
 mongoose.connect(process.env.MONGO_URI);
 
-
+app.use(cors());
 app.use(express.json());
 
 app.post('/login',async (req,res)=>{
