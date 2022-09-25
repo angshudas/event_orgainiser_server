@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 
 
 const app = express();
-mongoose.connect('mongodb://localhost:27017/eventmanage');
+mongoose.connect(process.env.MONGO_URI);
 
 
 app.use(express.json());
